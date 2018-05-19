@@ -2,6 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairShare.Android", "FairShare.Android\FairShare.Android.csproj", "{1815E7E5-EE9F-459E-A773-7C6BF1C19F2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairShare.Server.Domain", "Server\FairShare.Server.Domain\FairShare.Server.Domain.csproj", "{DFEB1D15-8ED9-4B0F-AEAE-120E44F314FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairShare.Server.Infrastructure", "Server\FairShare.Server.Infrastructure\FairShare.Server.Infrastructure.csproj", "{A45EE073-B273-4369-9B91-0FD6F53189FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{F58917D6-5E49-46FD-903F-160E3D4C7CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairShare.Server.WebApi", "Server\FairShare.Server.WebApi\FairShare.Server.WebApi.csproj", "{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +20,22 @@ Global
 		{1815E7E5-EE9F-459E-A773-7C6BF1C19F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1815E7E5-EE9F-459E-A773-7C6BF1C19F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1815E7E5-EE9F-459E-A773-7C6BF1C19F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFEB1D15-8ED9-4B0F-AEAE-120E44F314FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFEB1D15-8ED9-4B0F-AEAE-120E44F314FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFEB1D15-8ED9-4B0F-AEAE-120E44F314FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFEB1D15-8ED9-4B0F-AEAE-120E44F314FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45EE073-B273-4369-9B91-0FD6F53189FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45EE073-B273-4369-9B91-0FD6F53189FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45EE073-B273-4369-9B91-0FD6F53189FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45EE073-B273-4369-9B91-0FD6F53189FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFEB1D15-8ED9-4B0F-AEAE-120E44F314FC} = {F58917D6-5E49-46FD-903F-160E3D4C7CBA}
+		{A45EE073-B273-4369-9B91-0FD6F53189FD} = {F58917D6-5E49-46FD-903F-160E3D4C7CBA}
+		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A} = {F58917D6-5E49-46FD-903F-160E3D4C7CBA}
 	EndGlobalSection
 EndGlobal
