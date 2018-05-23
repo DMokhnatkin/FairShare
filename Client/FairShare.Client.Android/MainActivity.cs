@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using Android.Support.V7.App;
+using FairShare.Client.Android.Activities;
 
 namespace FairShare.Client.Android
 {
@@ -14,6 +15,8 @@ namespace FairShare.Client.Android
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            StartActivity(typeof(SignInActivity));
         }
     }
 }
