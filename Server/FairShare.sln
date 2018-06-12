@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FairShare.Server.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FairShare.Server.WebApi", "FairShare.Server.WebApi\FairShare.Server.WebApi.csproj", "{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairShare.Server.Identity", "FairShare.Server.Identity\FairShare.Server.Identity.csproj", "{7B15C9DC-7095-417E-B8E0-24CBFE2ED3CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA16C535-BE28-4410-AA8A-7AB0B3D7B24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B15C9DC-7095-417E-B8E0-24CBFE2ED3CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B15C9DC-7095-417E-B8E0-24CBFE2ED3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B15C9DC-7095-417E-B8E0-24CBFE2ED3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B15C9DC-7095-417E-B8E0-24CBFE2ED3CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
