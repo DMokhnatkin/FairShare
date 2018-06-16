@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "serverGoogleClientId", secretsProperties['serverGoogleClientId'])
+        buildConfigField("String", "BACKEND_GOOGLE_CLIENT_ID", secretsProperties['BACKEND_GOOGLE_CLIENT_ID'])
         manifestPlaceholders = ['appAuthRedirectScheme': secretsProperties['appAuthRedirectScheme']]
     }
     buildTypes {

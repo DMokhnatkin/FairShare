@@ -20,6 +20,8 @@ namespace FairShare.Server.WebApi.Startup
             services.AddMvc();
             
             SwaggerStartup.ConfigureServices(services);
+            DbStartup.ConfigureServices(services, Configuration);
+            AuthStartup.ConfigureServices(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,6 +33,7 @@ namespace FairShare.Server.WebApi.Startup
             }
             
             SwaggerStartup.Configure(app, env);
+            AuthStartup.Configure(app, env);
 
             app.UseMvc();
         }

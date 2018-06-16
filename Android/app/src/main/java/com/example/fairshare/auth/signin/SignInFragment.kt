@@ -8,19 +8,23 @@ import com.hannesdorfmann.mosby3.mvp.viewstate.MvpViewStateFragment
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 import net.openid.appauth.AuthorizationException
 import net.openid.appauth.AuthorizationRequest
 import net.openid.appauth.AuthorizationResponse
 import net.openid.appauth.AuthorizationService
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.common.api.ApiException
 
 class SignInFragment : MvpViewStateFragment<SignInView, SignInPresenter, SignInViewState>(), SignInView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -46,14 +50,14 @@ class SignInFragment : MvpViewStateFragment<SignInView, SignInPresenter, SignInV
         return SignInPresenter()
     }
 
-    fun onLocalLoginClicked() {
+    private fun onLocalLoginClicked() {
         email_login_form.clearAnimation()
 
         presenter.doLogin()
     }
 
-    fun onGoogleLoginClicked() {
-        presenter.doExternalLogin()
+    private fun onGoogleLoginClicked() {
+        presenter.doGoogleSignIn()
     }
 
     override fun showLoginForm() {
@@ -89,11 +93,21 @@ class SignInFragment : MvpViewStateFragment<SignInView, SignInPresenter, SignInV
         startActivityForResult(authIntent, RC_EXTERNAL_AUTH)
     }
 
+    override fun showGoogleSignIn(googleSignInOptions: GoogleSignInOptions) {
+        val googleSignInClient = GoogleSignIn.getClient(activity!!, googleSignInOptions)
+        val intent = googleSignInClient.signInIntent
+        startActivityForResult(intent, RC_GOOGLE_SIGNIN)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         when (requestCode) {
             RC_EXTERNAL_AUTH -> onExternalLogin(
                     if (data != null) AuthorizationResponse.fromIntent(data) else null,
                     AuthorizationException.fromIntent(data))
+            RC_GOOGLE_SIGNIN -> {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+                handleGoogleSignInResult(task)
+            }
         }
     }
 
@@ -105,7 +119,21 @@ class SignInFragment : MvpViewStateFragment<SignInView, SignInPresenter, SignInV
         }
     }
 
+    private fun handleGoogleSignInResult(task: Task<GoogleSignInAccount>) {
+        try {
+            val account = task.getResult(ApiException::class.java)
+
+            // TODO: ok
+
+        } catch (e: ApiException) {
+            Log.w(javaClass.canonicalName, "signInResult:failed code=" + e.statusCode);
+
+            // TODO: show error
+        }
+    }
+
     companion object {
         const val RC_EXTERNAL_AUTH = 120
+        const val RC_GOOGLE_SIGNIN = 121
     }
 }
